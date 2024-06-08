@@ -1,0 +1,10 @@
+In a zoo management system, there is a need to model different types of animals, including
+birds and aquatic animals. Each animal has basic information such as name, species, and
+age. Birds have additional attributes like wingspan and wing color. while aquatic animals
+have attributes like fin length, and bone type (light or spongy). All animals can eat, Birds can
+fly, and build a nest, and aquatic animals can swim. So, there is a need to model the concepts
+of fly ability and float ability for certain animals.
+Task 1: Implement a class hierarchy for animals ensuring proper encapsulation concepts.
+Task 2: Aquatic animals could be Fish, Whale or Seal. Some of these animals live in salty
+water while others live in fresh water. Some eat zooplankton while others eat other animals.
+Extend the previous hierarchy to support these relations.

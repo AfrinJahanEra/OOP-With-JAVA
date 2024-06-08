@@ -1,0 +1,25 @@
+
+
+1. **EmployeeData Class:**
+   - This class represents employee data with three attributes: `name`, `address`, and `description`.
+   - It has a constructor to initialize these attributes for an employee.
+   - It also has getter methods (`getName()`, `getAddress()`, `getDescription()`) to retrieve the values of these attributes.
+
+2. **ColumnIndex Enum:**
+   - This enum represents the indices of columns in a table.
+   - It defines three enum constants: `NAME_INDEX`, `DESCRIPTION_INDEX`, and `ADDRESS_INDEX`, corresponding to the columns for name, description, and address.
+
+3. **FillTable Class:**
+   - This class simulates a table filled with `EmployeeData` objects.
+   - It has a constructor that takes a list of `EmployeeData` objects as input and stores it in an instance variable `items`.
+   - The `getValueAt` method takes a row index (`row`) and a `ColumnIndex` enum (`col`) as parameters.
+   - Instead of using a switch-case statement with integer indices, it now uses the `ColumnIndex` enum to determine which attribute of the `EmployeeData` object to return based on the column index.
+   - The method retrieves the `EmployeeData` object at the specified row index and returns the corresponding attribute value based on the provided `ColumnIndex`.
+
+4. **Main Class:**
+   - The `Main` class contains the `main` method, which serves as the entry point of the program.
+   - Inside `main`, it creates a list of `EmployeeData` objects (`employeeDataList`) representing different employees.
+   - It then creates an instance of the `FillTable` class (`fillTable`) and passes the `employeeDataList` to its constructor.
+   - Finally, it calls the `getValueAt` method on `fillTable` to retrieve and print the value at a specific row and column index (`0, ColumnIndex.ADDRESS_INDEX` in this case).
+
+The main improvement in this code compared to the original version is the use of the `ColumnIndex` enum instead of hardcoded integer indices (`NAME_INDEX`, `DESCRIPTION_INDEX`, `ADDRESS_INDEX`). This makes the code more readable, maintainable, and less error-prone because enums provide type safety and better express the intention of the code.

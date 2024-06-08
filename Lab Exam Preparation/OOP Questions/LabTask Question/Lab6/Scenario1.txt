@@ -1,0 +1,10 @@
+You are developing a system for an online marketplace that connects sellers and buyers for
+various products. The system should model entities such as Seller, Product, Customer, and
+Review. you can think of some attributes for every class. For example, a seller has a name and
+a list of products. A product has a name, price, description, and category. A sellTo method
+receives a customer object. A customer has a name and a list of reviews and a purchase
+method receives a product object. A review has a message and rating value. You can add
+additional methods if you want.
+
+Your task is to create different types of relationships (association, aggregation, composi-
+tion, dependency).

@@ -1,0 +1,83 @@
+Cohesion Example:
+Cohesion refers to how closely related and focused the responsibilities within a module or class are. High cohesion means the class or module is focused on a single task or responsibility.
+
+Let's consider a simple example of a Calculator class in Java with high cohesion:
+
+java
+Copy code
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public double divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return (double) a / b;
+    }
+}
+In this example, the Calculator class has methods for performing basic arithmetic operations. Each method is focused on a specific task related to mathematical calculations. This demonstrates high cohesion because all methods are closely related in purpose and belong together in a calculator class.
+
+Coupling Example:
+Coupling refers to the degree of dependency between classes or modules. Low coupling is desirable as it reduces the interdependence between components, making the system more modular and easier to maintain.
+
+Let's consider a scenario where two classes, Order and Customer, are loosely coupled using interfaces:
+
+java
+Copy code
+// Interface defining customer behavior
+public interface Customer {
+    void placeOrder(String order);
+}
+
+// Customer implementation
+public class OnlineCustomer implements Customer {
+    @Override
+    public void placeOrder(String order) {
+        System.out.println("Order placed online: " + order);
+    }
+}
+
+// Order class using Customer interface
+public class Order {
+    private Customer customer;
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void processOrder(String order) {
+        // Process order logic
+        if (customer != null) {
+            customer.placeOrder(order);
+        } else {
+            System.out.println("No customer specified.");
+        }
+    }
+}
+
+// Main class to demonstrate coupling
+public class Main {
+    public static void main(String[] args) {
+        Order order = new Order();
+        Customer customer = new OnlineCustomer();
+
+        order.setCustomer(customer);
+        order.processOrder("Laptop");
+    }
+}
+In this example, the Order class is loosely coupled to the Customer interface. It does not depend directly on a specific customer implementation but rather on the behavior defined by the Customer interface. This allows flexibility to switch between different customer implementations (OnlineCustomer, InStoreCustomer, etc.) without modifying the Order class, demonstrating low coupling.
+
+
+
+
+
